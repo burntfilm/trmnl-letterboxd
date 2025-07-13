@@ -1,8 +1,14 @@
 name: build-image
+
+# 👇  NEW: let the workflow write to the repo
+permissions:
+  contents: write
+
 on:
   schedule:
-    - cron:  '17 * * * *'    # every hour at xx:17
-  workflow_dispatch:           # manual run button
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
 jobs:
   render:
     runs-on: ubuntu-latest
